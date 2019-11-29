@@ -4,6 +4,8 @@ class Frac:
     """Klasa reprezentująca ułamek."""
 
     def __init__(self, x=0, y=1):
+        if(y == 0):
+            raise ValueError("Denominator can't be equal to 0")
         self.x = x
         self.y = y
 
@@ -60,6 +62,8 @@ class Frac:
     __rmul__ = __mul__              # int*frac
 
     def __truediv__(self, other):  # frac1/frac2, frac/int
+        if(other.y == 0 or other == 0):
+            raise ValueError("Cannot divide by 0")
         if(isinstance(other, int)):
             other = Frac(other, 1)
         result = Frac()
