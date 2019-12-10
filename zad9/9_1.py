@@ -76,13 +76,3 @@ class SingleList:
             self.insert_tail(node)
             node = node.next
 
-    def print(self):
-        if(self.length == 0):
-            print("Pusta lista")
-        else:
-            node = self.head
-            while(node.next):
-                print(node.data)
-                node = node.next
-            print(node.data)
-
